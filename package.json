@@ -1,0 +1,23 @@
+{
+  "name": "restaurant-web-app",
+  "version": "1.0.0",
+  "description": "Simple Restaurant web application for a steak house to show what's hot and what's in store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "keywords": [
+    "restaurant",
+    "steakhouse",
+    "order",
+    "tabbed"
+  ],
+  "author": "Doma Z.A",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

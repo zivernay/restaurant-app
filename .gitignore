@@ -1,0 +1,2 @@
+# Exclude node modules from being synced
+node_modules/
