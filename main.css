@@ -1,0 +1,44 @@
+/* Remove default styles*/
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0 0.5rem;
+
+}
+body > header {
+    --header-height: 3rem;
+    height: var(--header-height);
+ 
+}
+body > main {
+    flex: 1 1 auto;
+}
+
+/* Main Navigation*/
+menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Article styles */
+#deals .deal {
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 7rem;
+
+    padding: 0.5rem;
+}
+.deal .deal-description {
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+    align-items: center;
+}
