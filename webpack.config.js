@@ -4,7 +4,7 @@ module.exports = {
     entry: {
         index: "./src/index.js",
     },
-    mode: "development",
+    mode: 'development',
     devtool: "inline-source-map",
     output: {
         filename: "[name].bundle.js",

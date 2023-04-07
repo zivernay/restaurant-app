@@ -82,3 +82,4 @@ const contactInformationTab =  document.querySelector("#contacts-tab");
 contactInformationTab.addEventListener("click", ()=>{
     showContactInformation();
 })
+console.log("It ran!");
