@@ -9,7 +9,7 @@ body {
 }
 body > header {
     --header-height: 3rem;
-    height: var(--header-height);
+    min-height: var(--header-height);
  
 }
 body > main {
@@ -23,6 +23,9 @@ menu {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+.tab {
+    cursor: pointer;
 }
 
 /* Article styles */
