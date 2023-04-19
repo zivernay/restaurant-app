@@ -44,7 +44,7 @@ header .tabs {
 .placeholder {
     background: black url("../img/Untitled.png");
 }
-.submenu {
+.tabs .submenu {
     display: flex;
     justify-content: flex-end;
     gap: 1em;
@@ -54,7 +54,24 @@ header .tabs {
     padding-inline: 1em;
 }
 
-
+.intro .title {
+    text-align: center;
+}
+.intro .hero {
+    position: relative;
+    text-align: center;
+    font: normal small-caps 300 1.38rem/1.62 system-fonts,san-serif;
+}
+.intro .hero::after {
+    position: absolute;
+    right: 1rem;
+    bottom: -1rem;
+    content: "Every bite is story to your tongue.";
+    font-size: 62%;
+    line-height: normal;
+    font-variant: normal;
+    font-stretch: extra-condensed;
+}
 
 
 
