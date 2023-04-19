@@ -1,0 +1,77 @@
+/* Remove default styles*/
+body,
+menu, figure {
+    padding: 0;
+    margin: 0;
+}
+menu {
+    list-style-type: none;
+}
+
+/* Layout*/
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+}
+body > main {
+    flex: 1 1 auto;
+}
+
+/* header*/
+header {
+    --nav-height: 3rem;
+    outline: 2px solid blue;
+}
+header .tabs {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    height: var(--nav-height);
+}
+.tabs .tab {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    
+}
+#home-tab{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.placeholder {
+    background: black url("../img/Untitled.png");
+}
+.submenu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    width: 50%;
+}
+.submenu .tab {
+    padding-inline: 1em;
+}
+
+
+
+
+
+/* Article styles */
+#deals .deal {
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 7rem;
+
+    padding: 0.5rem;
+}
+.deal .deal-description {
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+    align-items: center;
+}

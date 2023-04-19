@@ -1,3 +1,8 @@
+//import "./styles/reset.css";
+import "./styles/normalise.css";
+import "./styles/main.css";
+
+
 // create an article element and add it to deals section
 function parseDealInfo(data=null){
     const articleHeader = "Wings";
@@ -82,4 +87,3 @@ const contactInformationTab =  document.querySelector("#contacts-tab");
 contactInformationTab.addEventListener("click", ()=>{
     showContactInformation();
 })
-console.log("It ran!");
