@@ -47,7 +47,6 @@ header .tabs {
 .tabs .submenu {
     display: flex;
     justify-content: flex-end;
-    gap: 1em;
     width: 50%;
 }
 .submenu .tab {
@@ -61,10 +60,11 @@ header .tabs {
     position: relative;
     text-align: center;
     font: normal small-caps 300 1.38rem/1.62 system-fonts,san-serif;
+    padding-inline: 0.62rem;
 }
 .intro .hero::after {
     position: absolute;
-    right: 1rem;
+    right: 1.62rem;
     bottom: -1rem;
     content: "Every bite is story to your tongue.";
     font-size: 62%;
@@ -73,7 +73,35 @@ header .tabs {
     font-stretch: extra-condensed;
 }
 
-
+.price-tag {
+    display: non;
+}
+.tag {
+    --length: 5rem;
+    --clr: grey;
+    position: relative;
+    height: max(3rem, var(--length) * 0.782);
+    border: 1px solid red;
+}
+.tag .circle {
+    position: absolute;
+    right: calc(1.682rem + var(--length));
+    height: 100%;
+    width: max(3rem, var(--length) * 0.782);
+    border-radius: 50%;
+    background-color: var(--clr);
+}
+.tag .rect {
+    position: absolute;
+    right: 0.236rem;
+    transform:translateY(-50%);
+    top: 50%;
+    background-color: var(--clr);
+    width: max(var(--length) * 1.782, 3rem);
+    line-height: 1.782;
+    padding-right: 0.628rem;
+    text-align: right;
+}
 
 /* Article styles */
 #deals .deal {
