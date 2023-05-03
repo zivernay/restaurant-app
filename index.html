@@ -8,7 +8,7 @@
     <script src="./index.bundle.js" defer></script>
 </head>
 <body>
-    <header class="main">
+    <header id="header" class="main hidden">
         <nav class="tabs">
             <figure id="home-tab" class="tab">
                 <div class="placeholder">&nbsp;</div>
@@ -21,12 +21,15 @@
         </nav>
         <article class="intro">
             <h1 class="title">AdRestaurant</h1>
-            <p class="hero">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos rerum, odit magni perspiciatis ad expedita</p>
+            <p class="hero">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos rerum</p>
         </article>
     </header>
 
     <main id="offers">
-        <article class="featured">
+
+    </main>
+    <div class="templates hidden">
+        <article class="featured template">
             <h3>Featured</h3>
             <div class="price-tag">
                 <article class="tag">
@@ -34,15 +37,26 @@
                     <div class="rect">Get it now!</div>
                 </article>
             </div>
+            <figure class="img big  "></figure>
         </article>
-        <article class="deal-template">
-            <header>
-                <h3 class="deal-title"></h3>
-            </header>
-            <p class="deal-description"></p>
-            <footer class="deal-summary"></footer>
-        </article>
-        <article class="contact-info">
+        <section id="menu" class="menu template">
+            <article class="selected">
+                <figure></figure>
+            </article>
+            <menu class="menu-items">
+            <li>      
+                <article class="deal template">
+                    <header>
+                        <h3 class="deal-title">Wings</h3>
+                    </header>
+                    <figure></figure>
+                    <p class="deal-description">Lorem gdgfdf  dolor sit amet</p>
+                    <footer class="deal-summary">$12</footer>
+                </article>
+            </li>
+            </menu>
+        </section>
+        <article class="contact template">
                 <address>
                     <article class="phone-info">
                         <h3>Phone number</h3>
@@ -86,8 +100,7 @@
                     </table>
                 </address>
         </article>
-    </main>
-
+    </div>
     <footer>
         <small>No Righsts Reserved</small>
     </footer>
