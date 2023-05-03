@@ -1,6 +1,7 @@
 /* Remove default styles*/
 body,
-menu, figure {
+menu, figure,
+h1, h2, h3 {
     padding: 0;
     margin: 0;
 }
@@ -8,20 +9,22 @@ menu {
     list-style-type: none;
 }
 
+
 /* Layout*/
+
 body {
     display: flex;
     flex-flow: column nowrap;
     min-height: 100vh;
+    --nav-height: 3rem;
 }
 body > main {
     flex: 1 1 auto;
+    display: flex;
 }
 
 /* header*/
 header {
-    --nav-height: 3rem;
-    outline: 2px solid blue;
 }
 header .tabs {
     display: flex;
@@ -55,11 +58,13 @@ header .tabs {
 
 .intro .title {
     text-align: center;
+    margin: 0;
+    line-height: 1.382;
 }
 .intro .hero {
     position: relative;
     text-align: center;
-    font: normal small-caps 300 1.38rem/1.62 system-fonts,san-serif;
+    font: normal small-caps 300 1rem/1.38 system-fonts,san-serif;
     padding-inline: 0.62rem;
 }
 .intro .hero::after {
@@ -81,7 +86,6 @@ header .tabs {
     --clr: grey;
     position: relative;
     height: max(3rem, var(--length) * 0.782);
-    border: 1px solid red;
 }
 .tag .circle {
     position: absolute;
@@ -103,20 +107,96 @@ header .tabs {
     text-align: right;
 }
 
-/* Article styles */
-#deals .deal {
-    border: 1px solid gray;
-    border-radius: 0.25rem;
+/*
+    Featured deal
+*/
+.featured {
+    position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 7rem;
-
-    padding: 0.5rem;
+    width: 100%;
 }
-.deal .deal-description {
+.featured h3 {
+    line-height: 1.782;
+    padding-left: 0.628rem;
+}
+.featured .price-tag {
+    position: absolute;
+    right: 0;
+    bottom: 0.782rem;
+}
+.img.big {
+    flex-grow: 1;
+    background: gray url("../img/Untitled.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* Article styles */
+.menu-items {
+    width: 100%;
+}
+#menu .deal {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "fig name"
+        "fig desc"
+        "fig price";
+    gap: 0.382rem;
+}
+.deal figure {
+    grid-area: fig;
+    background: gray url(../img/31790889_b11.jpg);
+    background-size: cover;
+    border-radius: 0.782rem;
+    box-shadow: 0.236rem 0.382rem 1rem rgba(128, 128, 128, 0.401);
+}
+.deal header {
+    grid-area: name;
+}
+.deal-description {
+    grid-area: desc;
+    margin: 0;
+    line-height: 1.382;
+    font-size: smaller;
+}
+.deal-summary {
+    grid-area: price;
+}
+
+
+.menu {
+    height: calc(100vh - var(--nav-height) - 1.15rem);
+    width: 100%;
+}
+.selected {
+    flex-grow: 3;
+    height: 62.8%;
+    overflow: clip;
+}
+.selected figure {
+    background: black url("../img/31790889_b11.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.menu-items {
     flex-grow: 2;
-    flex-shrink: 1;
-    flex-basis: auto;
+    height: 37.2%;
+    overflow-y: scroll;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 0.236rem;
+}
+
+.menu-items li{
+    box-shadow: 0.236rem 0.382rem 1rem rgba(128, 128, 128, 0.12);
+}
+
+/**/
+.hidden {
+    display: none;
 }
