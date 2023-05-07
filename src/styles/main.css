@@ -149,10 +149,12 @@ header .tabs {
 }
 .deal figure {
     grid-area: fig;
-    background: gray url(../img/31790889_b11.jpg);
-    background-size: cover;
-    border-radius: 0.782rem;
+    border-radius: 0.38rem;
     box-shadow: 0.236rem 0.382rem 1rem rgba(128, 128, 128, 0.401);
+}
+figure img {
+    width: 100%;
+    border-radius: 0.38rem;
 }
 .deal header {
     grid-area: name;
@@ -192,8 +194,16 @@ header .tabs {
     gap: 0.236rem;
 }
 
-.menu-items li{
+.menu-items li {
+    border-bottom: 1px solid  rgba(128, 128, 128, 0.12);
+}
+.menu-items li:hover{
     box-shadow: 0.236rem 0.382rem 1rem rgba(128, 128, 128, 0.12);
+}
+
+/**/
+.starring {
+    padding-left: 1rem;
 }
 
 /**/
