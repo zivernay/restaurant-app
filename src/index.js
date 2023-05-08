@@ -44,8 +44,29 @@ const dbResturant = {
         desc: "Chekuzvimbirisa"}
 };
 
+
+// Display intro message in header
+// Select and show the featured deal
+function showHomepage() {
+    // show intro
+    const intro = document.querySelector(".intro");
+    intro.classList.remove("hidden");
+    // Select featured deal
+    const index = Math.floor(Math.random() * 10);
+    const id = `d${index}`;
+    // format featured deal
+    const featuredTemp = document.querySelector(".featured.temp"); // use classes to avoid cloning IDs
+    const featured = featuredTemp.cloneNode(true);
+    const img = featured.querySelector("img");
+    img.setAttribute("src", dbResturant[id]["urlImg"]);
+    img.setAttribute("alt", dbResturant[id]["desc"]);
+    // show featured deal
+    const main = document.querySelector("#main");
+    main.innerHTML = "";
+    main.appendChild(featured);
+}
+
 function setDealProp(deal, id){
-    deal.setAttribute("data-id", id);
     const figure = deal.querySelector("figure img");
     figure.setAttribute("src", dbResturant[id]["urlImg"]);
     figure.setAttribute("alt", dbResturant[id]["desc"]);
@@ -54,63 +75,66 @@ function setDealProp(deal, id){
 
 function createDealElement(id){
     const li = document.createElement("li");
-    const dealTemp = document.querySelector(".deal.template");
+    li.setAttribute("data-id", id);
+    const dealTemp = document.querySelector(".deal.temp");
     let deal = dealTemp.cloneNode(true);
-    deal.classList.remove("template");
     deal = setDealProp(deal, id);
     li.appendChild(deal);
     return li;
 }
 
-function showHomepage() {
-    const header = document.querySelector("#header");
-    const dealsContainer = document.querySelector("#offers");
-    const featured = document.querySelector(".template.featured");
-    const intro = document.querySelector(".intro");
-    intro.classList.remove("hidden");
-    header.classList.remove("hidden");
-    dealsContainer.innerHTML = ""; // clearing the container everytime
-    const clonedFeatured = featured.cloneNode(true);
-    clonedFeatured.classList.remove(...["hidden", "template"]);
-    dealsContainer.appendChild(clonedFeatured);
-}
-
+// Display the Restaurant menu by:
+//    - showing options
+//    - hide intro to create space
 function showMenu() {
-    const dealsContainer = document.querySelector("#offers");
-    const menuTemp = document.querySelector("#menu");
-    const menu = menuTemp.cloneNode(true);
-    const deals = menu.querySelector(".menu-items");
+    // hide intro
     const intro = document.querySelector(".intro");
     intro.classList.add("hidden");
-    dealsContainer.innerHTML = "";
-    for(let i=0; i<12; i++) {
-        debugger;
-        const deal = createDealElement(`d${i}`);    
+// generate menu options
+    const menuTemp = document.querySelector(".menu.temp");
+    const menu = menuTemp.cloneNode(true);
+    menu.classList.remove("temp");
+    const deals = menu.querySelector(".deals.temp");
+    for(let i=0; i<10; i++) {
+        const deal = createDealElement(`d${i}`);
+        deal.addEventListener("click", showSelectedDeal); 
         deals.appendChild(deal);
     }
-    dealsContainer.appendChild(menu);
+    //show generated options
+    const main = document.querySelector("#main");
+    main.innerHTML = "";
+    main.appendChild(menu);
 }
 
 function showContactInformation() {
-    const dealsContainer = document.querySelector("#offers");
-    dealsContainer.innerHTML = "";
+    const main = document.querySelector("#main");
+    main.innerHTML = "";
+    //hide intro
     const intro = document.querySelector(".intro");
     intro.classList.add("hidden");
-    const contactTemp = document.querySelector(".contact.template");
+    const contactTemp = document.querySelector(".contact.temp");
     const contact = contactTemp.cloneNode(true);
-    contact.classList.remove("template");
-    dealsContainer.appendChild(contact);
+    main.appendChild(contact);
 }
 
-function showSelectedDeal(deal){
+function showSelectedDeal(){
     const prevSelection = document.querySelector(".starring");
-    prevSelection.classList.remove(".starring");
+    if (prevSelection) {
+        prevSelection.classList.remove("starring");
+    }
+    const deal = this;
     deal.classList.add("starring");
-    const diplay = querySelector(".selected figure");
+    const cover = document.querySelector(".cover-img");
+    cover.innerHTML = "";
     const id = deal.dataset.id;
-
-    //introduce database dictionary object to store data
-    // use data- attributes to index the dictionary and match the selected item details
+    // special displaying layout
+    cover.classList.add("selected");
+    const img = document.createElement("img");
+    img.setAttribute("src", dbResturant[id]["urlImg"]);
+    img.setAttribute("alt", dbResturant[id]["desc"]);
+    cover.appendChild(img);
+    const menu = document.querySelector(".deals");
+    menu.classList.add("menu-items")
 }
 
 // Events 
@@ -127,6 +151,3 @@ const contactInformationTab =  document.querySelector("#contacts-tab");
 contactInformationTab.addEventListener("click", ()=>{
     showContactInformation();
 })
-// add listener to display the selected item 
-//dealElements = document.querySelectorAll(".deal");
-//for(let i=0; i<length(dealElements), i++) {}

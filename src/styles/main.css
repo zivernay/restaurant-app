@@ -10,50 +10,50 @@ menu {
 }
 
 
-/* Layout*/
-
+/* Layout */
 body {
     display: flex;
     flex-flow: column nowrap;
     min-height: 100vh;
     --nav-height: 3rem;
+    --footer-height: 1.15rem;
 }
-body > main {
+#header {
+    min-height: var(--nav-height);
+}
+#main {
     flex: 1 1 auto;
-    display: flex;
+}
+footer {
+    min-height: var(--footer-height);
 }
 
-/* header*/
-header {
-}
-header .tabs {
+/* header */
+.tabs {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-end;
     height: var(--nav-height);
 }
 .tabs .tab {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-grow: 1;
     cursor: pointer;
     height: 100%;
-    
+    padding-inline: 0.23rem;
+    border-radius: 0.38rem;
+}
+.tabs .tab:hover {
+    font-size: 107%;
+    background-color: rgba(128, 128, 128, 0.23);
 }
 #home-tab{
     width: 50%;
-    display: flex;
-    justify-content: center;
-}
-.placeholder {
-    background: black url("../img/Untitled.png");
 }
 .tabs .submenu {
     display: flex;
-    justify-content: flex-end;
     width: 50%;
-}
-.submenu .tab {
-    padding-inline: 1em;
 }
 
 .intro .title {
@@ -78,16 +78,54 @@ header .tabs {
     font-stretch: extra-condensed;
 }
 
-.price-tag {
-    display: non;
+
+/*
+    Featured deal
+*/
+#main {
+    display: flex;
+    max-height: calc(100vh - var(--nav-height) - 1.15rem);
 }
-.tag {
+.featured {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.sub-heading {
+    font-weight: 300;
+    line-height: 1.782;
+    padding-left: 0.628rem;
+}
+.featured .cover-img {
+    flex-grow: 1;
+    background: gray;
+    overflow: clip;
+    height: calc(100% - 1.782rem);
+}
+.cover-img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    max-height: 78vh;
+    object-position: 50% 50%;
+}
+
+/*Price tag*/
+.price-tag {
     --length: 5rem;
-    --clr: grey;
+    --clr: rgb(81, 174, 164);
+    position: absolute;
+    bottom: 0.38rem;
+    right: 0;
+}
+.price-tag > div {
     position: relative;
     height: max(3rem, var(--length) * 0.782);
+    width: var(--length);
 }
-.tag .circle {
+.price-tag .circle {
     position: absolute;
     right: calc(1.682rem + var(--length));
     height: 100%;
@@ -95,7 +133,7 @@ header .tabs {
     border-radius: 50%;
     background-color: var(--clr);
 }
-.tag .rect {
+.price-tag .rect {
     position: absolute;
     right: 0.236rem;
     transform:translateY(-50%);
@@ -107,37 +145,11 @@ header .tabs {
     text-align: right;
 }
 
-/*
-    Featured deal
-*/
-.featured {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+/*Menu items*/
+.menu {
     width: 100%;
 }
-.featured h3 {
-    line-height: 1.782;
-    padding-left: 0.628rem;
-}
-.featured .price-tag {
-    position: absolute;
-    right: 0;
-    bottom: 0.782rem;
-}
-.img.big {
-    flex-grow: 1;
-    background: gray url("../img/Untitled.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-/* Article styles */
-.menu-items {
-    width: 100%;
-}
-#menu .deal {
+.deals .deal {
     display: grid;
     grid-template-columns: 8rem 1fr;
     grid-template-rows: repeat(3, auto);
@@ -146,45 +158,42 @@ header .tabs {
         "fig desc"
         "fig price";
     gap: 0.382rem;
+    border-bottom: 1px solid  rgba(128, 128, 128, 0.12);
 }
-.deal figure {
+.deals .deal:hover {
+    box-shadow: 0.236rem 0.382rem 1rem rgba(128, 128, 128, 0.12);
+}
+.deal .preview {
     grid-area: fig;
     border-radius: 0.38rem;
     box-shadow: 0.236rem 0.382rem 1rem rgba(128, 128, 128, 0.401);
 }
-figure img {
-    width: 100%;
+.preview img {
+    object-fit: cover;
+    width:100%;
+    max-height: 5rem;
     border-radius: 0.38rem;
 }
 .deal header {
     grid-area: name;
 }
-.deal-description {
+.deal .desc {
     grid-area: desc;
     margin: 0;
     line-height: 1.382;
     font-size: smaller;
 }
-.deal-summary {
+.deal .price {
     grid-area: price;
 }
 
 
-.menu {
-    height: calc(100vh - var(--nav-height) - 1.15rem);
-    width: 100%;
-}
 .selected {
     flex-grow: 3;
     height: 62.8%;
     overflow: clip;
 }
-.selected figure {
-    background: black url("../img/31790889_b11.jpg");
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}
+
 .menu-items {
     flex-grow: 2;
     height: 37.2%;
@@ -194,19 +203,14 @@ figure img {
     gap: 0.236rem;
 }
 
-.menu-items li {
-    border-bottom: 1px solid  rgba(128, 128, 128, 0.12);
-}
-.menu-items li:hover{
-    box-shadow: 0.236rem 0.382rem 1rem rgba(128, 128, 128, 0.12);
-}
 
 /**/
 .starring {
-    padding-left: 1rem;
+    margin-left: 1rem;
 }
 
 /**/
+#templates,
 .hidden {
     display: none;
 }
