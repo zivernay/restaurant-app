@@ -8,10 +8,10 @@
     <script src="./index.bundle.js" defer></script>
 </head>
 <body>
-    <header id="header" class="main hidden">
+    <header id="header">
         <nav class="tabs">
             <figure id="home-tab" class="tab">
-                <div class="placeholder">&nbsp;</div>
+                <figure class="logo"><img src="#" alt="resturant logo"></figure>
                 <figcaption>Home</figcaption>
             </figure>
             <menu class="submenu">
@@ -25,59 +25,58 @@
         </article>
     </header>
 
-    <main id="offers">
+    <main id="main">
 
     </main>
-    <div class="templates hidden">
-        <article class="featured template">
-            <h3>Featured</h3>
-            <div class="price-tag">
-                <article class="tag">
-                    <div class="circle price">&nbsp;</div>
-                    <div class="rect">Get it now!</div>
-                </article>
-            </div>
-            <figure class="img big  "></figure>
-        </article>
-        <section id="menu" class="menu template">
-            <article class="selected">
-                <figure>
-                    <img src="" alt="">
-                </figure>
-            </article>
-            <menu class="menu-items">
-            <li>      
 
-            </li>
-            </menu>
-            <article class="deal template">
-                <header>
-                    <h3 class="deal-title">Wings</h3>
-                </header>
-                <figure>
-                    <img src="" alt="">
-                </figure>
-                <p class="deal-description">Lorem gdgfdf  dolor sit amet</p>
-                <footer class="deal-summary">$12</footer>
+    <div id="templates">
+        <article class="featured temp">
+            <h3 class="sub-heading">Featured</h3>
+            <article class="price-tag">
+                <div>
+                    <div class="circle price">&nbsp;</div>
+                    <div class="rect motivation">Get it now!</div>
+                </div>
             </article>
+            <figure class="cover-img"><img src="" alt=""></figure>
+        </article>
+
+        <section class="menu temp">
+            <figure class="cover-img"></figure>
+            <menu class="deals temp"></menu>
         </section>
-        <article class="contact template">
-                <address>
-                    <article class="phone-info">
-                        <h3>Phone number</h3>
-                        <p>Call us or text <span>"Order"</span> at the following numbers</p>
-                        <ul>
-                            <li>
-                                <a href="tel:+91151651463">+9(115) 165 14-63</a>
-                            </li>
-                            <li><a href="tel:+76251684862">+7(625) 168 48-62</a></li>
-                        </ul>
-                    </article>
-                    <article class="text-info">
-                        <h3>Email</h3>
-                        <p>Email <span>"Order"</span></p>
-                        <a href="mailto:order@restaurant.com">order@mail.com</a>
-                    </article>
+
+        <article class="deal temp">
+            <header>
+                <h3 class="name">Wings</h3>
+            </header>
+            <figure class="preview">
+                <img src="" alt="">
+            </figure>
+            <p class="desc">Lorem gdgfdf  dolor sit amet</p>
+            <footer class="price">$12</footer>
+        </article>
+
+        <article class="contact temp">
+            <address>
+                <article class="phone">
+                    <h3>Phone number</h3>
+                    <p>Call us or text <span>"Order"</span> at the following numbers</p>
+                    <ul>
+                        <li>
+                            <a href="tel:+91151651463">+9(115) 165 14-63</a>
+                        </li>
+                        <li><a href="tel:+76251684862">+7(625) 168 48-62</a></li>
+                    </ul>
+                </article>
+
+                <article class="text">
+                    <h3>Email</h3>
+                    <p>Email <span>"Order"</span></p>
+                    <a href="mailto:order@restaurant.com">order@mail.com</a>
+                </article>
+
+                <article class="physical"></article>
                     <h3>Physical addresses</h3>
                     <p>Visit us at:</p>
                     <table>
@@ -103,10 +102,11 @@
                             <td></td>
                         </tr>
                     </table>
-                </address>
+            </address>
         </article>
     </div>
-    <footer>
+    
+    <footer id="footer">
         <small>No Righsts Reserved</small>
     </footer>
 </body>
