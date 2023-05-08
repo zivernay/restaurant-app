@@ -1,22 +1,23 @@
 //import "./styles/reset.css";
 import "./styles/normalise.css";
 import "./styles/main.css";
-import img_d1  from "./img/31790889_b11.jpg";
+
+import img_d1  from "./img/roasted-meat-with-chopped-vegetables.jpg";
 import img_d2  from "./img/close-up-view-italian-food-wooden-table.jpg";
-import img_d3  from "./img/drawing.svg";
-import img_d4  from "./img/fried-meat-ribs-with-vegetables-potatoes.jpg";
-import img_d5  from "./img/front-view-long-meat-cutlets-with-lemon-pomegranates.jpg";
-import img_d6  from "./img/g11782.svg";
+import img_d3  from "./img/fried-meat-ribs-with-vegetables-potatoes.jpg";
+import img_d4  from "./img/front-view-long-meat-cutlets-with-lemon-pomegranates.jpg";
+import img_d5 from "./img/topview-served-beef-salad-with-cherry-tomatos-lettuce-white-table.jpg";
+import img_d6 from "./img/top-view-chicken-wings-plate-with-sesame-seeds-copy-space.jpg";
 import img_d7  from "./img/grilled-lamb-chop-steak.jpg";
 import img_d8  from "./img/high-angle-plate-with-fried-chicken-salad-with-sauce-cutlery.jpg";
-import img_d9  from "./img/roasted-meat-with-chopped-vegetables.jpg";
-import img_d10 from "./img/top-view-chicken-wings-plate-with-sesame-seeds-copy-space.jpg";
-import img_d11 from "./img/topview-served-beef-salad-with-cherry-tomatos-lettuce-white-table.jpg";
-import img_d12 from "./img/Untitled.png";
+
+import img_p1  from "./img/placeholder.jpg";
+import img_p2 from "./img/placeholder-dark.png";
+import img_logo  from "./img/logo.svg";
 
 
 const dbResturant = {
-    d0: {urlImg: img_d12,
+    d0: {urlImg: img_d8,
         desc: "Chekuravidza"},
     d1: {urlImg: img_d1,
         desc: "This the first description"
@@ -36,11 +37,11 @@ const dbResturant = {
         desc: "Another one!"},
     d8: {urlImg: img_d8,
         desc: "hoza"},
-    d9: {urlImg: img_d9,
+    d9: {urlImg: img_d5,
         desc: "Ka suspensi"},
-    d10: {urlImg: img_d10,
+    d10: {urlImg: img_d6,
         desc: "Now i see what is up"},
-    d11: {urlImg: img_d11,
+    d11: {urlImg: img_d3,
         desc: "Chekuzvimbirisa"}
 };
 
@@ -48,6 +49,8 @@ const dbResturant = {
 // Display intro message in header
 // Select and show the featured deal
 function showHomepage() {
+    const logo = document.querySelector(".logo img");
+    logo.setAttribute("src", img_logo);
     // show intro
     const intro = document.querySelector(".intro");
     intro.classList.remove("hidden");

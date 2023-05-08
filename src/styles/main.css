@@ -51,6 +51,10 @@ footer {
 #home-tab{
     width: 50%;
 }
+.logo img {
+    height: var(--nav-height);
+    object-fit: contain;
+}
 .tabs .submenu {
     display: flex;
     width: 50%;
