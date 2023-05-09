@@ -207,11 +207,48 @@ footer {
     gap: 0.236rem;
 }
 
-
 /**/
 .starring {
     margin-left: 1rem;
 }
+
+/*Contact info*/
+.contact {
+    background: cornsilk url(../img/placeholder.jpg);
+    background-size: cover;
+    width: 100%;
+}
+.contact address {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: center;
+    background: gray url(../img/placeholder-dark.png);
+    background-size: cover;
+    max-height: calc(100vh - var(--nav-height) - 1.15rem);
+    border-bottom-left-radius: 78%;
+    border-bottom-right-radius: 78%;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    min-height: 63vh;
+}
+
+address article {
+    min-width: max(17rem, 34%);
+    padding: 0.63rem;
+    font-style: normal;
+    background: cornsilk url(../img/placeholder.jpg);
+    border-radius: 0.78rem;
+    border: 3px outset white;
+    box-shadow: 3px 2px 0.63rem rgba(17, 0, 0, 0.23);
+}
+
+.contact .sub-heading {
+    font-weight: 300;
+    font-variant: small-caps;
+    text-decoration: underline;
+}
+
 
 /**/
 #templates,
