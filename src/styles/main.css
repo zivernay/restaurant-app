@@ -26,6 +26,7 @@ body {
 }
 footer {
     min-height: var(--footer-height);
+    background-color: white;
 }
 
 /* header */
@@ -152,6 +153,7 @@ footer {
 /*Menu items*/
 .menu {
     width: 100%;
+    overflow: auto;
 }
 .deals .deal {
     display: grid;
@@ -217,6 +219,7 @@ footer {
     background: cornsilk url(../img/placeholder.jpg);
     background-size: cover;
     width: 100%;
+    overflow: auto;
 }
 .contact address {
     display: flex;
@@ -226,10 +229,9 @@ footer {
     background: gray url(../img/placeholder-dark.png);
     background-size: cover;
     max-height: calc(100vh - var(--nav-height) - 1.15rem);
-    border-bottom-left-radius: 78%;
-    border-bottom-right-radius: 78%;
-    padding-top: 1rem;
-    padding-bottom: 3rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
     min-height: 63vh;
 }
 
